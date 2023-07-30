@@ -1,0 +1,25 @@
+.about{
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-direction: column;
+   
+}
+
+.title{
+    margin: 0 5% 0 5%;
+
+}
+
+.text{
+    margin: 0 7.5% 0 7.5%;
+}
+
+.text p{
+    max-width: 100%;
+    margin-top: 0px;
+    margin-bottom: 0.8rem;
+    text-align: start;
+    line-height: 2rem;
+    font-size: 1.2rem;
+}
