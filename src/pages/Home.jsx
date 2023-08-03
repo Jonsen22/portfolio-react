@@ -109,6 +109,7 @@ const Home = () => {
             <a
               href="https://drive.google.com/file/d/12o6SFAQc-RXC1jjE3Zn5UDYzxzYLhxOv/view?usp=sharing"
               target="_blank"
+              rel="noreferrer"
               className="resume"
             >
 
