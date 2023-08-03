@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from "react";
 import "../index.css";
 import "./home.css";
+import Eu from "../Eu.jpg";
+import GitHubIcon from '@mui/icons-material/GitHub';
+import LinkedInIcon from '@mui/icons-material/LinkedIn';
+import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 const useWindowSize = () => {
   const [windowSize, setWindowSize] = useState({
@@ -49,41 +53,73 @@ const Home = () => {
   };
 
   const divStyle = {
-    "--scrollY": `${3 * scrollY}px`,
-    "--scrollY2": `${-3 * scrollY}px`,
+    "--scrollY": `${15 * scrollY}px`,
+    "--scrollY2": `${-15 * scrollY}px`,
+    marginLeft: "10%"
+  };
+  const divStyle2 = {
+    "--scrollY": `${15 * scrollY}px`,
+    "--scrollY2": `${-15 * scrollY}px`,
   };
 
   return (
     <div className="home">
-      {isSmallScreen ? (
-        <div className="info">
-          <div className="info-text" style={divStyle}>
-            <h1 className="title-home">Welcome!</h1>
-            <span>
-              My name is Gabriel Jansen, I'm FullStack developer based in
-              Brazil, Rio de Janeiro.
-            </span>
-          </div>
+      <div className="info">
+        {isSmallScreen ? (
+          <div className="welcome">
+            <div className="welcome-text" style={divStyle}>
+              <h1 className="title-home">Welcome!</h1>
+              <span>
+                My name is Gabriel Jansen, I'm FullStack developer based in
+                Brazil, Rio de Janeiro.
+              </span>
+            </div>
 
-          <div className="info-photo">
-            <img
-              className="photo1"
-              src="https://placehold.co/300x300.png"
-              alt="placeholder"
-            />
+            <div className="welcome-photo">
+              <img className="photo1" src={Eu} alt="placeholder" />
+            </div>
           </div>
-        </div>
-      ) : (
-        <div className="info">
-          <div className="info-text" style={divStyle}>
-            <h1 className="title-home">Welcome!</h1>
-            <span>
-              My name is Gabriel Jansen, I'm FullStack developer based in
-              Brazil, Rio de Janeiro.
-            </span>
+        ) : (
+          <div className="welcome">
+            <div className="welcome-text" style={divStyle2}>
+              <h1 className="title-home">Welcome!</h1>
+              <span>
+                My name is Gabriel Jansen, I'm FullStack developer based in
+                Brazil, Rio de Janeiro.
+              </span>
+            </div>
           </div>
+        )}
+        <div className="icons">
+          <a
+            href="https://github.com/Jonsen22"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <GitHubIcon />
+          </a>
+          <a
+            href="https://www.linkedin.com/in/gabriel-jansen2/"
+            target="_blank"
+            rel="noreferrer"
+          >
+            <LinkedInIcon />
+          </a>
+        
+            <a
+              href="https://drive.google.com/file/d/12o6SFAQc-RXC1jjE3Zn5UDYzxzYLhxOv/view?usp=sharing"
+              target="_blank"
+              className="resume"
+            >
+
+                <PictureAsPdfIcon />
+              <span className="tooltip">Resume</span>
+    
+
+            </a>
+      
         </div>
-      )}
+      </div>
     </div>
   );
 };

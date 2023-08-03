@@ -1,98 +1,131 @@
-.info {
-    margin: 0 5% 0 5%;
+
+.info{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.welcome {
+    margin: 0 0% 0 0%;
     display: flex;
     justify-content: stretch;
     align-items: center;
-    height: 100%;
+    height: 90%;
     overflow-x: hidden;
 }
 
+.icons {
+    height: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
 
 
-.info-text::before,
-.info-text::after {
+.icons a:not(:last-of-type) {
+    margin-right: 1rem;
+}
+
+.icons svg {
+    color: var(--white);
+    transition: var(--transition);
+    font-size: 40px;
+    width: 40px;
+  }
+
+.icons path {
+    height: 30px;
+    width: 30px;
+}
+  
+  .icons svg:hover {
+    color: rgb(176, 119, 204);
+    transition: 0.1s ease-in-out all;
+   
+  }
+
+
+
+.welcome-text::before,
+.welcome-text::after {
     position: absolute;
     width: 50px;
     height: 30px;
     content: "";
 }
 
-.info-text::before {
+.welcome-text::before {
     left: 0;
     top: 0;
-    border-image: linear-gradient(to right, darkblue, darkorchid) 1;
+    border-image: linear-gradient(to right, rgb(78, 78, 206), darkorchid) 1;
     border-left: 3px solid black;
     border-top: 3px solid black;
     transform: translateX(var(--scrollY2));
+    transition: all 0.3s ease;
    
 }
 
-.info-text::after {
+.welcome-text::after {
     right: 0;
     bottom: 0;
-    border-image: linear-gradient(to left, darkblue, darkorchid) 1;
+    border-image: linear-gradient(to left, rgb(78, 78, 206), darkorchid) 1;
     border-right: 3px solid ;
     border-bottom: 3px solid ;
     transform: translateX(var(--scrollY));
     z-index: 500;
+    transition: all 0.3s ease;
     
 }
 
-.info-text {
+.welcome-text {
     position: relative;
     text-align: left;
     flex: 60%;
     padding: 15px;
     border: none;
-    
-    
+    max-width: 650px;
+    margin-left: 2%;
     min-height: 15%;
-
-    /* border-width: 4px;
-    border-radius: 30px;
-    border-style: solid;
-    border-image: linear-gradient(to bottom, darkblue, darkorchid) 1; */
+   
 }
 
-.info-photo {
-    margin-left: 5%;
+.welcome-photo {
+    margin: 0 3% 0 3%;
+    margin-left: 3%;
     flex: 40%;
     justify-content: center;
     align-items: center;
+}
+
+.welcome-photo img{
+    border-radius: 100%;
+    max-width: 400px;
+    max-height: 400px;
+}
+
+
+.resume .tooltip {
+    visibility: hidden;
+    width: 80px;
+    font-size: 13px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 10px;
+    padding: 1px 0;
     
+  position: absolute;
+         display: inline-block;
+         margin-top: 45px;
+  margin-left: -60px;
 }
 
-/* @media screen and (max-width: 650px) {
-    .info {
-      flex-direction: column;
-    }
-  
-    .info-text, .info-photo {
-      flex: 100%;
-      width: 90%;
-
-      min-height: 30%;
-    }
-
-    .info-text::after{
-        margin-bottom: 5%;
-    }
-
-    .info-text::before {
-        margin-top: 5%;
-    }
-
-    img{
-        max-width: 80%; 
-         max-height: 80%; 
-        height: auto;
-        width: auto;
-    }
-  } */
-
-img{
-  
+.resume:hover .tooltip {
+    visibility: visible;
 }
+
+
+
 
 .title-home {
     margin-bottom: 0px;
