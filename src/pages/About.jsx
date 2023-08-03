@@ -11,10 +11,10 @@ const About = () => {
       <div className="text">
         <p>
           My name is Gabriel Jansen, I'm FullStack developer based in Brazil,
-          Rio de Janeiro -- Also a game developer and a mooder. I'm passionate
+          Rio de Janeiro -- Also a game developer and a modder. I'm passionate
            about technology, gaming and cats.
         </p>
-        <p>My</p>
+        <p>My education, experiencie and skills</p>
       </div>
     </div>
   );

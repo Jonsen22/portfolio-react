@@ -171,16 +171,17 @@ a {
 }
 
 .navbar img {
-  width: clamp(40px, 25vw, 50px);
+  width: clamp(40px, 25vw, 45px);
   margin-bottom: -2px;
   transition: all 0.2s ease;
+  margin-right: 5px;
 }
-
 
 .navbar-shrink img {
   width: clamp(20px, 25vw, 30px);
   margin-bottom: -2px;
   transition: all 0.2s ease;
+  margin-right: 2px;
 }
 
 .nav-center {
