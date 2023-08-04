@@ -203,14 +203,14 @@ a {
   font-size: clamp(0.75rem, 6vw, 1rem);
   color: var(--white);
   transition: var(--transition);
-  
+  text-align: center;
 }
 
 .nav-center-shrink span {
   font-size: clamp(0.30rem, 6vw, 0.8rem);
   color: var(--white);
   transition: var(--transition);
-  
+  text-align: center;
 }
 
 .nav-left{

@@ -70,7 +70,7 @@ const Home = () => {
             <div className="welcome-text" style={divStyle}>
               <h1 className="title-home">Welcome!</h1>
               <span>
-                My name is Gabriel Jansen, I'm FullStack developer based in
+                My name is Gabriel Jansen, I'm a FullStack developer based in
                 Brazil, Rio de Janeiro.
               </span>
             </div>
