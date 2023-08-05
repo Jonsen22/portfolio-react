@@ -1,15 +1,41 @@
 import Navbar from "./Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About"
-
+import React , {useState, useEffect} from "react";
 
 function App() {
+  const useWindowSize = () => {
+    const [windowSize, setWindowSize] = useState({
+      width: window.innerWidth,
+      height: window.innerHeight,
+    });
+  
+    useEffect(() => {
+      const handleResize = () => {
+        setWindowSize({
+          width: window.innerWidth,
+          height: window.innerHeight,
+        });
+      };  
+  
+      window.addEventListener('resize', handleResize);
+  
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }, []);
+  
+    return windowSize;
+  };
+
+  const width = useWindowSize();
+  
   return (
     
     <main id="home">
       <Navbar />
-      <Home/>
-      <About/>
+      <Home width={width}/>
+      <About width={width}/>
         
       <section className="projects" id="projects">
         <h1>projects</h1>

@@ -1,8 +1,15 @@
 // import React, { useState, useEffect } from "react";
-import "../index.css";
+// import "../index.css";
+import { green } from "@mui/material/colors";
 import "./about.css";
 
-const About = () => {
+const About = (props) => {
+  
+  const width = props.width;
+  console.log(width.height < 930)
+  const isSmallScreen = width.width > 768;
+  const isSmallHeight = width.height > 930;
+
   return (
     <div className="about" id="about">
       <div className="title">
@@ -19,19 +26,81 @@ const About = () => {
           Federal do Estado do Rio de Janeiro (UNIRIO) in 2023.
         </p>
       </div>
-      <div className="bottomAbout">
-        <div className="skills">
-          <h3>Skills</h3>
-          <span>C# | .NET | EF Core | Java | SpringBoot | JavaScript 
-            | React | Redux | TypeScript | jQuery | Electron | MSSQL 
-            | NoSQL | Git | OracleDB | CI/CD | JUnit | Selenium 
-            | Unit Testing | Lambda | OOP | Construct 2 | REST  
-          </span>
+
+      {(isSmallScreen && isSmallHeight)  ? (
+      // {isSmallScreen   ? (
+        <div className="bottomAbout">
+          <div className="skills">
+            <h3>Skills</h3>
+            <span>
+              C# | .NET | EF Core | Java | SpringBoot | JavaScript | React |
+              Redux | TypeScript | jQuery | Electron | MSSQL | NoSQL | Git |
+              CI/CD | JUnit | Selenium | Unit Testing | Construct 2 | REST
+            </span>
+          </div>
+          <div className="experience">
+            <h3>Experience</h3>
+            <span style={{ color: "#7b74ff" }}>LDA Sistemas e Consultoria</span>
+            <br />
+            <span>FullStack Web Developer </span>
+            <br />
+            <span>06/2022 - Current</span>
+            <ul >
+              <li>Develop new features and maintain existing applications.</li>
+              <li>
+                Cooperated on the implementation of WSO2 for efficient API
+                management within the organization.
+              </li>
+              <li>Integrated a new API system for sms.</li>
+            </ul>
+            <br />
+            <span style={{ color: "#7b74ff" }}>DataPrev</span>
+            <br />
+            <span>Intern FullStack Web Developer </span>
+            <br />
+            <span>11/2019 - 03/2020</span>
+            <br />
+            <ul >
+              <li>
+                Collaborated on the creation of a web page utilizing React-Redux
+                for the frontend and Java for the backend.
+              </li>
+              <li>
+                Cooperated on the implementation of WSO2 for efficient API
+                management within the organization.
+              </li>
+              <li>Unit testing(JUnit) in some applications.</li>
+            </ul>
+          </div>
         </div>
-        <div className="experience">
-          <h3>Experience</h3>
+      ) : (
+        <div className="bottomAbout">
+          <div className="skills">
+            <h3>Skills</h3>
+            <span>
+              C# | .NET | EF Core | Java | SpringBoot | JavaScript | React |
+              Redux | TypeScript | jQuery | Electron | MSSQL | NoSQL | Git |
+              CI/CD | JUnit | Selenium | Unit Testing | Construct 2 | REST
+            </span>
+          </div>
+          <div className="experience">
+            <h3>Experience</h3>
+            <span style={{ color: "#7b74ff" }}>LDA Sistemas e Consultoria</span>
+            <br />
+            <span>FullStack Web Developer </span>
+            <br />
+            <span>06/2022 - Current</span>
+            <br />
+            <br />
+            <span style={{ color: "#7b74ff" }}>DataPrev</span>
+            <br />
+            <span>Intern FullStack Web Developer </span>
+            <br />
+            <span>11/2019 - 03/2020</span>
+            <br />
+          </div>
         </div>
-      </div>
+      )}
     </div>
   );
 };

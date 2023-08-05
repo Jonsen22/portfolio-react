@@ -15,6 +15,16 @@
     margin: 0 7.5% 0 7.5%;
 }
 
+ul{
+    text-align: left;
+    margin-left: 6%;
+list-style: disc;
+}
+
+li{
+    font-size: clamp(0.4rem, 4vw, 0.8rem);
+}
+
 .text p{
     max-width: 100%;
     width: inherit;
@@ -39,29 +49,47 @@
 .bottomAbout {
     margin-top: 4%;
     display: flex;
-    /* flex-direction: row; */
-    
-    height: 96%;
+    flex-direction: row;
+    /* align-items: flex-start; */ /* Remove this line */
+    /* height: 96%; */
     width: 100%;
 }
 
 .bottomAbout h3{
-    text-align: left;
+    text-align: center;
     
     font-size: clamp(0.8rem, 8vw, 1.3rem);
 }
 
-.skills{
+.skills {
     flex: 1;
     margin-left: 7.5%;
-    width: 100%;
+    /* Remove display: flex; */
+    margin-right: 2%;
 }
+
+
 
 .skills span{
     text-align: left;
-    font-size: clamp(0.3rem, 8vw, 1.1rem);
+    font-size: clamp(0.3rem, 4vw, 1.1rem);
+
 }
 
-.experience{
+.experience {
+    /* overflow-y: auto;
+    max-height: 300; */
     flex: 1;
+    /* Remove display: flex; */
+    border-left: 2px solid;
+    border-image: linear-gradient(to bottom, rgb(78, 78, 206), darkorchid) 1;
+}
+
+
+.experience span{
+    width: 100%;
+    text-align: left;
+    font-size: clamp(0.3rem, 4vw, 1.0rem);
+    
+
 }

@@ -1,49 +1,19 @@
 import React, { useState, useEffect } from "react";
-import "../index.css";
+// import "../index.css";
 import "./home.css";
 import Eu from "../Eu.jpg";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
-const useWindowSize = () => {
-  const [windowSize, setWindowSize] = useState({
-    width: window.innerWidth,
-    height: window.innerHeight,
-  });
-
-  useEffect(() => {
-    const handleResize = () => {
-      setWindowSize({
-        width: window.innerWidth,
-        height: window.innerHeight,
-      });
-    };
-
-    window.addEventListener('resize', handleResize);
-
-    return () => {
-      window.removeEventListener('resize', handleResize);
-    };
-  }, []);
-
-  return windowSize;
-};
 
 
-const Home = () => {
+
+const Home = (props) => {
   const [scrollY, setScrollY] = useState(0);
-  const { width } = useWindowSize();
+  const { width } = props.width;
   const isSmallScreen = width > 768;
 
-  useEffect(() => {
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  
 
   // console.log(window.innerWidth)
 
@@ -51,6 +21,13 @@ const Home = () => {
     setScrollY(window.scrollY);
     // console.log(window.scrollY);
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   const divStyle = {
     "--scrollY": `${15 * scrollY}px`,
