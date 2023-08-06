@@ -77,13 +77,14 @@ li{
 }
 
 .experience {
-    --angle: 0deg;
+   
     /* overflow-y: auto;
     max-height: 300; */
     flex: 1;
     /* Remove display: flex; */
     border-left: 2px solid;
     border-image: linear-gradient(var(--angle), rgb(78, 78, 206), darkorchid) 1;
+    --angle: 0deg;
     animation: 5s rotate linear infinite;
 }
 

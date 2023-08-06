@@ -57,23 +57,26 @@
 .welcome-text::before {
     left: 0;
     top: 0;
-    border-image: linear-gradient(to right, rgb(78, 78, 206), darkorchid) 1;
+    border-image: linear-gradient(var(--angle), rgb(78, 78, 206), darkorchid) 1;
     border-left: 3px solid black;
     border-top: 3px solid black;
     transform: translateX(var(--scrollY2));
     transition: all 0.3s ease;
+    --angle: 0deg;
+    animation: 3s rotate linear infinite;
    
 }
 
 .welcome-text::after {
     right: 0;
     bottom: 0;
-    border-image: linear-gradient(to left, rgb(78, 78, 206), darkorchid) 1;
+    border-image: linear-gradient(var(--angle), rgb(78, 78, 206), darkorchid) 1;
     border-right: 3px solid ;
     border-bottom: 3px solid ;
     transform: translateX(var(--scrollY));
     z-index: 500;
     transition: all 0.3s ease;
+    animation: 3s rotate linear infinite;
     
 }
 
@@ -130,3 +133,15 @@
 .title-home {
     margin-bottom: 0px;
 }
+
+@keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
