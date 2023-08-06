@@ -77,12 +77,14 @@ li{
 }
 
 .experience {
+    --angle: 0deg;
     /* overflow-y: auto;
     max-height: 300; */
     flex: 1;
     /* Remove display: flex; */
     border-left: 2px solid;
-    border-image: linear-gradient(to bottom, rgb(78, 78, 206), darkorchid) 1;
+    border-image: linear-gradient(var(--angle), rgb(78, 78, 206), darkorchid) 1;
+    animation: 5s rotate linear infinite;
 }
 
 
@@ -93,3 +95,15 @@ li{
     
 
 }
+
+@keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }

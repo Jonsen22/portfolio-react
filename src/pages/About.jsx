@@ -4,10 +4,10 @@ import "./about.css";
 
 const About = (props) => {
   
-  const width = props.width;
-  console.log(width.height < 930)
-  const isSmallScreen = width.width > 768;
-  const isSmallHeight = width.height > 930;
+  const size = props.size;
+  console.log(size.height < 930)
+  const isSmallScreen = size.width > 768;
+  const isSmallHeight = size.height > 930;
 
   return (
     <div className="about" id="about">
@@ -21,7 +21,7 @@ const About = (props) => {
           about technology, gaming and cats.
         </p>
         <p>
-          I graduated as a Bachelor in Information Systems from the Universidade
+          I graduated as a Bachelor in Information Systems at the Universidade
           Federal do Estado do Rio de Janeiro (UNIRIO) in 2023.
         </p>
       </div>

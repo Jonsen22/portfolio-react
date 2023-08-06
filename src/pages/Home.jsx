@@ -11,8 +11,8 @@ import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';
 
 const Home = (props) => {
   const [scrollY, setScrollY] = useState(0);
-  const { width } = props.width;
-  const isSmallScreen = width > 768;
+  const size = props.size;
+  const isSmallScreen = size.width > 768;
 
 
   // console.log(window.innerWidth)

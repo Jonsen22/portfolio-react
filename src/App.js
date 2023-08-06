@@ -28,14 +28,14 @@ function App() {
     return windowSize;
   };
 
-  const width = useWindowSize();
+  const size = useWindowSize();
   
   return (
     
     <main id="home">
       <Navbar />
-      <Home width={width}/>
-      <About width={width}/>
+      <Home size={size}/>
+      <About size={size}/>
         
       <section className="projects" id="projects">
         <h1>projects</h1>
