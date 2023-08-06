@@ -1,6 +1,5 @@
 // import React, { useState, useEffect } from "react";
 // import "../index.css";
-import { green } from "@mui/material/colors";
 import "./about.css";
 
 const About = (props) => {
