@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 // import "../index.css";
 import "./home.css";
-import Eu from "../Eu.jpg";
+import Eu from "../images/Eu.jpg";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import PictureAsPdfIcon from '@mui/icons-material/PictureAsPdf';

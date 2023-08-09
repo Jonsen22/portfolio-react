@@ -2,6 +2,7 @@ import Navbar from "./Navbar";
 import Home from "./pages/Home";
 import About from "./pages/About"
 import React , {useState, useEffect} from "react";
+import Projects from "./pages/Projects";
 
 function App() {
   const useWindowSize = () => {
@@ -36,10 +37,8 @@ function App() {
       <Navbar />
       <Home size={size}/>
       <About size={size}/>
-        
-      <section className="projects" id="projects">
-        <h1>projects</h1>
-      </section>
+      <Projects size={size}/>    
+    
       <section className="contact" id="contact">
         <h1>contact</h1>
       </section>

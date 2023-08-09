@@ -3,39 +3,63 @@
 import "./about.css";
 
 const About = (props) => {
-  
+  var skills = [
+    "C#",
+    ".NET",
+    "EF Core",
+    "Java",
+    "SpringBoot",
+    "JavaScript",
+    "React",
+    "Redux",
+    "TypeScript",
+    "jQuery",
+    "Electron",
+    "SQL",
+    "NoSQL",
+    "Git",
+    "CI/CD",
+    "JUnit",
+    "Selenium",
+    "Unit Testing",
+    "Construct 2",
+    "REST",
+  ];
+
   const size = props.size;
-  console.log(size.height < 930)
-  const isSmallScreen = size.width > 768;
+  // console.log(size.height < 930)
+  const isSmallScreen = size.width > 867;
   const isSmallHeight = size.height > 930;
 
   return (
     <div className="about" id="about">
-      <div className="title">
-        <h1>About</h1>
-      </div>
-      <div className="text">
-        <p>
-          My name is Gabriel Jansen, I'm a FullStack developer based in Brazil,
-          Rio de Janeiro -- Also a game developer and a modder. I'm passionate
-          about technology, gaming and cats.
-        </p>
-        <p>
-          I graduated as a Bachelor in Information Systems at the Universidade
-          Federal do Estado do Rio de Janeiro (UNIRIO) in 2023.
-        </p>
+      <div className="topAbout">
+        <div className="title">
+          <h1>About</h1>
+        </div>
+        <div className="text">
+          <p>
+            My name is Gabriel Jansen, I'm a FullStack developer based in
+            Brazil, Rio de Janeiro -- Also a game developer and a modder. I'm
+            passionate about technology, gaming and cats.
+          </p>
+          <p>
+            I graduated as a Bachelor in Information Systems at the Universidade
+            Federal do Estado do Rio de Janeiro (UNIRIO) in 2023.
+          </p>
+        </div>
       </div>
 
-      {(isSmallScreen && isSmallHeight)  ? (
-      // {isSmallScreen   ? (
+      {isSmallScreen && isSmallHeight ? (
+        // {isSmallScreen   ? (
         <div className="bottomAbout">
           <div className="skills">
             <h3>Skills</h3>
-            <span>
-              C# | .NET | EF Core | Java | SpringBoot | JavaScript | React |
-              Redux | TypeScript | jQuery | Electron | MSSQL | NoSQL | Git |
-              CI/CD | JUnit | Selenium | Unit Testing | Construct 2 | REST
-            </span>
+            <ul>
+              {skills.map((skill) => (
+                <li key={skill}>{skill}</li>
+              ))}
+            </ul>
           </div>
           <div className="experience">
             <h3>Experience</h3>
@@ -44,7 +68,7 @@ const About = (props) => {
             <span>FullStack Web Developer </span>
             <br />
             <span>06/2022 - Current</span>
-            <ul >
+            <ul>
               <li>Develop new features and maintain existing applications.</li>
               <li>
                 Cooperated on the implementation of WSO2 for efficient API
@@ -59,7 +83,7 @@ const About = (props) => {
             <br />
             <span>11/2019 - 03/2020</span>
             <br />
-            <ul >
+            <ul>
               <li>
                 Collaborated on the creation of a web page utilizing React-Redux
                 for the frontend and Java for the backend.

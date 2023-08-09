@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { links } from "./data";
-import logo from "./logoMedium.png";
+import logo from "./images/logoMedium.png";
 
 const Navbar = () => {
   const [isTop, setIsTop] = useState(true);
