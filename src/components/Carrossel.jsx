@@ -40,8 +40,8 @@ const Carrossel = (props) => {
         <motion.div className="inner" drag="x" dragConstraints={boxRef}>
           {images.map((image, index) =>
             isSmallScreen ? (
-              <motion.div className="item">
-                <img src={image} alt="texto alt" key={index} />
+              <motion.div className="item" key={index}  >
+                <img src={image} alt="texto alt"/>
                 <div className="descricao">
                   {" "}
                   dlkawjdkla lk l kdjawlk djlk jlkaw jldkald aw lkwdajdklawj
@@ -49,8 +49,8 @@ const Carrossel = (props) => {
                 </div>
               </motion.div>
             ) : (
-              <motion.div className="item" style={{ minWidth: "200px" }}>
-                <img src={image} alt="texto alt" key={image} style={{ height: "50%"}} />
+              <motion.div className="item" style={{ minWidth: "200px" }}  key={index}  >
+                <img src={image} alt="texto alt" style={{ height: "50%"}} />
                 <div className="descricao" style={{ height: "50%"}}>
                   {" "}
                   dlkawjdkla lk l kdjawlk djlk jlkaw jldkald aw lkwdajdklawj

@@ -9,10 +9,10 @@ const Navbar = () => {
     e.preventDefault();
     const target = e.target.getAttribute("href");
     const location = document.querySelector(target);
-    console.log(target);
+    // console.log(target);
     if(target === "#home"){
       setIsTop(true)
-      console.log("arget");
+      // console.log("arget");
     }
     const offsetTop = location.offsetTop - 40;
 

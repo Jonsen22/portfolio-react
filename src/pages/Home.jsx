@@ -41,11 +41,11 @@ const Home = (props) => {
 
   return (
     <div className="home">
-      <div className="info">
+      <div className="flex flex-col h-full">
         {isSmallScreen ? (
-          <div className="welcome">
+          <div className="welcome ">
             <div className="welcome-text" style={divStyle}>
-              <h1 className="title-home">Welcome!</h1>
+              <h1 className="m-0">Welcome!</h1>
               <span>
                 My name is Gabriel Jansen, I'm a FullStack developer based in
                 Brazil, Rio de Janeiro.
