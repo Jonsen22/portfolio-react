@@ -95,7 +95,7 @@
     --angle: 0deg;
     border-image: linear-gradient(var(--angle), rgb(78, 78, 206), darkorchid) 1;
     
-    animation: 5s rotate linear infinite;
+    animation: 2                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               s rotate linear infinite;
 }
 
 

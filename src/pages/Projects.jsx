@@ -15,15 +15,39 @@ import bbzinho4 from "../images/bbzinho4.jpg";
 
 // https://picsum.photos/200/300
 
-const images = [
-  bbzinha2,
-  bbzinho1,
-  bbzinha1,
-  bbzinho2,
-  bbzinha3,
-  bbzinho3,
-  bbzinha4,
-  bbzinho4,
+const projetos = [
+  {
+    image: bbzinha2,
+    text: "bbzinha2",
+  },
+  {
+    image: bbzinho1,
+    text: "bbzinho1",
+  },
+  {
+    image: bbzinha1,
+    text: "bbzinha1",
+  },
+  {
+    image: bbzinho2,
+    text: "bbzinho2",
+  },
+  {
+    image: bbzinha3,
+    text: "bbzinha3",
+  },
+  {
+    image: bbzinho3,
+    text: "bbzinho3",
+  },
+  {
+    image: bbzinha4,
+    text: "bbzinha4",
+  },
+  {
+    image: bbzinho4,
+    text: "bbzinho4",
+  },
 ];
 
 const Projects = (props) => {
@@ -35,11 +59,16 @@ const Projects = (props) => {
         <h1>Projects</h1>
       </div>
       {/* <Carrossel width={props.size.width} /> */}
-      <div className="max-w-lg" >
+      <div className="h-full w-full">
         <Carousel autoSlide={false}>
-          {images.map((image, i) => (
-            <img src={image} alt="dlkawjawldk" key={i} />
-          ))}
+          {/* {projetos.map((projeto, i) => (
+            <div key={i} className="">
+              <div className="">
+                <img src={projeto.image} alt="dlkawjawldk"  />
+              </div>
+              <div>{projeto.text}</div>
+            </div>
+          ))} */}
         </Carousel>
       </div>
     </div>

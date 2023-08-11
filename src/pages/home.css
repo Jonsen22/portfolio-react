@@ -63,7 +63,7 @@
     transform: translateX(var(--scrollY2));
     transition: all 0.3s ease;
     --angle: 0deg;
-    animation: 3s rotate linear infinite;
+    animation: 1s rotate linear infinite;
    
 }
 
@@ -76,7 +76,7 @@
     transform: translateX(var(--scrollY));
     z-index: 500;
     transition: all 0.3s ease;
-    animation: 3s rotate linear infinite;
+    animation: 1s rotate linear infinite;
     
 }
 
