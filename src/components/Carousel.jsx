@@ -8,15 +8,11 @@ import bbzinha3 from "../images/bbzinha3.jpg";
 import bbzinha4 from "../images/bbzinha4.jpg";
 
 import bbzinho1 from "../images/bbzinho1.jpg";
-import bbzinho2 from "../images/bbzinho2.jpg";
+// import bbzinho2 from "../images/bbzinho2.jpg";
 import bbzinho3 from "../images/bbzinho3.jpg";
 import bbzinho4 from "../images/bbzinho4.jpg";
 
-export default function Carousel(
-  {
-    // children: projetos,
-  }
-) {
+export default function Carousel() {
   // https://picsum.photos/200/300
 
   const projetos = [
