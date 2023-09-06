@@ -14,8 +14,8 @@ const Navbar = () => {
       setIsTop(true)
       // console.log("arget");
     }
-    const offsetTop = location.offsetTop - 40;
 
+    const offsetTop = isTop === true ? location.offsetTop - 60 : location.offsetTop - 40
    
     window.scroll({
       top: offsetTop,

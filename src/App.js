@@ -3,6 +3,7 @@ import Home from "./pages/Home";
 import About from "./pages/About"
 import React , {useState, useEffect} from "react";
 import Projects from "./pages/Projects";
+import Contact from "./pages/Contact";
 
 function App() {
   const useWindowSize = () => {
@@ -38,10 +39,7 @@ function App() {
       <Home size={size}/>
       <About size={size}/>
       <Projects size={size}/>    
-    
-      <section className="contact" id="contact">
-        <h1>contact</h1>
-      </section>
+      <Contact size = {size}/>
       <section className="footer"></section>
     </main>
   );
