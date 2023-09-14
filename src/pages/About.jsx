@@ -33,7 +33,7 @@ const About = (props) => {
 
   return (
     <div className=" about flex items-center justify-start flex-col" id="about">
-      <div >
+      <div>
         <div className="mx-0.5 ">
           <h1>About</h1>
         </div>
@@ -51,7 +51,7 @@ const About = (props) => {
       </div>
 
       {isSmallScreen && isSmallHeight ? (
-        <div className="w-full flex flex-row mt-3.5" >
+        <div className="w-full flex flex-row mt-3.5">
           <div className=" flex-1 m-4">
             <h3 className="text-lg font-semibold">Skills</h3>
             <ul>
@@ -70,22 +70,24 @@ const About = (props) => {
             <br />
             <span>06/2022 - Current</span>
             <ul className="list-disc ml-4">
+              <li>Develop new features and maintain existing applications.</li>
               <li>
-                Develop new features and maintain existing applications.
-              </li>
-              <li>
-                Cooperated on the implementation of WSO2 for efficient API
-                management within the organization.
+                Designed and developed an API for document download automation
+                in the insurers sites ( .Net, Windows Form, Selenium, MSSQL),
+                reducing manual effort resulting in significant time and cost
+                savings for the organization.
               </li>
               <li>Integrated a new API system for sms.</li>
             </ul>
             <span className="text-purple-600">DataPrev</span>
             <br />
-            <span className="font-semibold">FullStack Web Developer Intern</span>
+            <span className="font-semibold">
+              FullStack Web Developer Intern
+            </span>
             <br />
             <span>11/2019 - 03/2020</span>
             <ul className="list-disc ml-4">
-            <li>
+              <li>
                 Collaborated on the creation of a web page utilizing React-Redux
                 for the frontend and Java for the backend.
               </li>
@@ -101,14 +103,14 @@ const About = (props) => {
         <div className="bottomAbout">
           <div className="skills">
             <h3>Skills</h3>
-            
+
             {/* <span> */}
             {skills.map((skill, i) => (
-                <span key={i}>
-                  {i < skills.length -1 ? skill+" | " : skill}
-                  </span>
-              ))}
-              {/* C# | .NET | EF Core | Java | SpringBoot | JavaScript | React |
+              <span key={i}>
+                {i < skills.length - 1 ? skill + " | " : skill}
+              </span>
+            ))}
+            {/* C# | .NET | EF Core | Java | SpringBoot | JavaScript | React |
               Redux | TypeScript | jQuery | Electron | MSSQL | NoSQL | Git |
               CI/CD | JUnit | Selenium | Unit Testing | Construct 2 | REST
             </span> */}

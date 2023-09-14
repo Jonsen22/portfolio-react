@@ -80,6 +80,19 @@
     
 }
 
+
+@keyframes rotate {
+    to {
+      --angle: 360deg;
+    }
+  }
+
+  @property --angle {
+    syntax: '<angle>';
+    initial-value: 0deg;
+    inherits: false;
+  }
+
 .welcome-text {
     position: relative;
     text-align: left;
@@ -133,15 +146,3 @@
 .title-home {
     margin-bottom: 0px;
 }
-
-@keyframes rotate {
-    to {
-      --angle: 360deg;
-    }
-  }
-
-  @property --angle {
-    syntax: '<angle>';
-    initial-value: 0deg;
-    inherits: false;
-  }
