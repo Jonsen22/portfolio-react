@@ -17,26 +17,26 @@ const Contact = (props) => {
     <div className="contact flex flex-col " id="contact">
       <h1>Contact</h1>
       <div className="flex flex-wrap justify-start ml-[10%] md:ml-[20%] md:justify-between mr-[10%] mt-16 h-[65%]  md:flex-row flex-col items-center">
-        <div className=" w-full md:h-1/2 md:w-2/5 flex flex-col justify-start md:justify-end">
-          <div className="flex-col flex md:items-start relative md:pl-14">
+        <div className="md:max-w-[510px] w-full md:h-1/2 md:w-[40%] flex flex-col justify-start md:justify-end">
+          <div className="flex-col flex md:items-start relative md:pl-4">
             <span className="w-full text-left">Your name:</span>
-            <input className="px-2 w-full md:w-4/5 rounded-2xl bg-gray-600 text-white "
+            <input className="text-xs px-2 py-2 w-full md:w-4/5 rounded-2xl bg-gray-600 text-white md:max-w-[250px]"
             value={nome}
             onChange={(e) => {setNome(e.target.value);}}></input>
           </div>
-          <div className="pt-5 flex-col flex md:items-start relative md:pl-14">
+          <div className="pt-2 flex-col flex md:items-start relative md:pl-4">
             <span className="w-full text-left">Your email:</span>
-            <input className="rounded-2xl bg-gray-600 text-white px-2 w-full md:w-4/5 "
+            <input className="text-xs py-2 rounded-2xl bg-gray-600 text-white px-2 w-full md:w-full md:max-w-[300px] "
              value={email}
              onChange={(e) => {setEmail(e.target.value);}}></input>
           </div>
         </div>
-        <div className="md:h-1/2 md:w-3/5 hidden md:block pr-10">
+        <div className="md:h-1/2 md:flex-1 hidden md:flex pr-10 items-start self-end">
           <img alt="Gata com a lingua de fora" src={Linguaruda} 
           className="object-cover w-[300px] bg-slate-600  h-full rounded-full"></img>
         </div>
         <div className="h-1/2 md:h-1/2  w-full">
-          <div className="pt-2 flex-col flex items-start relative md:pl-14 h-full">
+          <div className="pt-2 flex-col flex items-start relative md:pl-4 h-full">
             <span className="w-full text-left">Your message:</span>
             <textarea className="max-w-[800px] rounded-2xl bg-gray-600 text-white px-2 w-full md:w-4/5 h-2/3 resize-none "
              value={mensagem}
