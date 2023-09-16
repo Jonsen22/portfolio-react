@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 // import "../index.css";
 import "./home.css";
 import Eu from "../images/Eu.jpg";
@@ -15,35 +15,40 @@ const Home = (props) => {
   const isSmallScreen = size.width > 768;
 
 
-  // console.log(window.innerWidth)
-
-  const handleScroll = () => {
-    setScrollY(window.scrollY);
-    // console.log(window.scrollY);
-  };
+  // console.log(size)
+  
+  const handleScroll = useCallback(() => {
+    if (window.scrollY > size.height / 5) {
+      setScrollY(window.scrollY);
+    } else {
+      setScrollY(0);
+    }
+  }, [size]);
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [handleScroll]);
 
   const divStyle = {
-    "--scrollY": `${15 * scrollY}px`,
+    "--scrollY": `${15 * (scrollY)}px`,
     "--scrollY2": `${-15 * scrollY}px`,
-    marginLeft: "10%"
+    marginLeft: "10%",
+
   };
   const divStyle2 = {
     "--scrollY": `${15 * scrollY}px`,
     "--scrollY2": `${-15 * scrollY}px`,
+
   };
 
   return (
     <div className="home">
-      <div className="flex flex-col h-full">
+      <div className=" flex flex-col h-full">
         {isSmallScreen ? (
-          <div className="welcome ">
+          <div className="welcome pl-[10%]">
             <div className="welcome-text" style={divStyle}>
               <h1 className="m-0">Welcome!</h1>
               <span>

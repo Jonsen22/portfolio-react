@@ -52,7 +52,7 @@ const About = (props) => {
 
       {isSmallScreen && isSmallHeight ? (
         <div className="w-full flex flex-row mt-3.5">
-          <div className=" flex-1 m-4">
+          <div className=" flex-1 m-4 pl-7">
             <h3 className="text-lg font-semibold">Skills</h3>
             <ul>
               {skills.map((skill) => (
@@ -62,7 +62,7 @@ const About = (props) => {
               ))}
             </ul>
           </div>
-          <div className="experience flex-1 m-4">
+          <div className="experience flex-1 p-4 pr-10">
             <h3 className="text-lg font-semibold">Experience</h3>
             <span className="text-purple-600">LDA Sistemas e Consultoria</span>
             <br />

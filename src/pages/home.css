@@ -61,7 +61,7 @@
     border-left: 3px solid black;
     border-top: 3px solid black;
     transform: translateX(var(--scrollY2));
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     --angle: 0deg;
     animation: 1s rotate linear infinite;
    
@@ -75,7 +75,7 @@
     border-bottom: 3px solid ;
     transform: translateX(var(--scrollY));
     z-index: 500;
-    transition: all 0.3s ease;
+    transition: all 0.5s ease;
     animation: 1s rotate linear infinite;
     
 }
