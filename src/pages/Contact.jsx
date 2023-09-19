@@ -29,7 +29,7 @@ const Contact = (props) => {
       
       console.log(response)
       
-      if (response === "Sended") {
+      if (response === "Sended" || status === "Sended") {
         setNome("");
         setEmail("");
         setMensagem("");
