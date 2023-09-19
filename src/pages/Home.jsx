@@ -89,7 +89,7 @@ const Home = (props) => {
           </a>
         
             <a
-              href="https://drive.google.com/file/d/12o6SFAQc-RXC1jjE3Zn5UDYzxzYLhxOv/view?usp=sharing"
+              href="https://docs.google.com/document/d/1Eng9yvySw62ARNiwwyug8Bd8YvO6TxhYa2QLOro0sd0/edit?usp=sharing"
               target="_blank"
               rel="noreferrer"
               className="resume"

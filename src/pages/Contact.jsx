@@ -27,9 +27,9 @@ const Contact = (props) => {
         setStatus("Error sending email.");
       }
       
-      console.log(status)
+      console.log(response)
       
-      if (status === "Sended") {
+      if (response === "Sended") {
         setNome("");
         setEmail("");
         setMensagem("");
@@ -64,10 +64,10 @@ const Contact = (props) => {
 
 
   return (
-    <div className="contact flex flex-col " id="contact">
+    <div className="contact flex flex-col items-center" id="contact">
       <h1>Contact</h1>
-      <div className="flex flex-wrap justify-start ml-[10%] md:ml-[20%] md:justify-between mr-[10%] mt-16 h-[65%]  md:flex-row flex-col items-center">
-        <div className="md:max-w-[510px] w-full md:h-1/2 md:w-[40%] flex flex-col justify-start md:justify-end">
+      <div className="flex flex-wrap justify-start ml-[10%] md:ml-[20%] w-[80%] md:justify-center mr-[10%] mt-16 h-[65%]  md:flex-row flex-col items-center">
+        <div className="w-full md:flex-grow-0  md:w-1/3 md:max-w-[450px] md:h-1/2  flex flex-col justify-start md:justify-end">
           <div className="flex-col flex md:items-start relative md:pl-4">
             <span className="w-full text-left mb-1 ">Your name:</span>
             {nomeError ? (
@@ -102,7 +102,7 @@ const Contact = (props) => {
             {emailError !== "ok" ? (
               <>
                 <input
-                  className="border-2 border-rose-500 outline-none text-xs px-2 py-2 w-full md:w-4/5 rounded-2xl bg-gray-600 text-white md:max-w-[300px]"
+                  className="border-2 border-rose-500 outline-none text-xs px-2 py-2 w-full  rounded-2xl bg-gray-600 text-white md:w-full md:max-w-[300px]"
                   value={email}
                   onChange={handleEmailChange}
                 ></input>
@@ -122,26 +122,26 @@ const Contact = (props) => {
             )}
           </div>
         </div>
-        <div className="md:h-1/2 md:flex-1 hidden md:flex pr-10 items-start self-end">
+        <div className="md:h-1/2 md:flex-1 md:max-w-[690px] hidden md:flex pl-2 items-start self-end md:w-2/3">
           <img
             alt="Gata com a lingua de fora"
             src={Linguaruda}
-            className="shadow-[20px_20px_4px_rgba(0,0,0,0.2)] object-cover w-[300px] bg-slate-600  h-full rounded-full"
+            className="shadow-[20px_20px_4px_rgba(0,0,0,0.2)] object-cover w-[300px] w-min-[300px] bg-slate-600  h-full rounded-full max-h-[300px]"
           ></img>
         </div>
-        <div className="h-1/2 md:h-1/2  w-full">
-          <div className="pt-2 flex-col flex items-start relative md:pl-4 h-full">
-            <span className="w-full text-left">Your message:</span>
+        <div className="items-center h-1/2 md:h-1/2 w-full md:flex justify-center md:w-full flex-col ">
+          <div className=" pt-2 flex-col flex items-start  md:w-full md:max-w-[1140px] md:pl-4 h-full">
+            <span className="w-full text-start ">Your message:</span>
             {mensagemError ? (
               <>
                 <textarea
-                  className="border-2 border-rose-500 outline-none max-w-[800px] rounded-2xl bg-gray-600 text-white px-2 w-full md:w-4/5 h-2/3 resize-none "
+                  className="border-2 border-rose-500 outline-none  rounded-2xl bg-gray-600 text-white px-2 w-full md:w-4/5 h-2/3 resize-none "
                   value={mensagem}
                   onChange={(e) => {
                     setMensagem(e.target.value);
                   }}
                 ></textarea>
-                <div className="max-w-[800px] flex mt-1 w-full md:w-4/5 justify-between">
+                <div className=" flex mt-1 w-full md:w-4/5 justify-between">
                 <span className="text-rose-600 font-thin text-xs text-start pl-2 mt-1 h-3">
                   Message empty
                 </span>

@@ -56,7 +56,7 @@ export default function Carousel() {
 
   return (
     <div className="flex flex-col items-center mt-10 relative h-4/5 m-4">
-      <div className="bg-indigo-900 w-full h-1/3 max-w-lg rounded-t-xl relative">
+      <div className="bg-indigo-900 w-full h-auto max-w-lg rounded-xl relative">
         <div className="  bg-indigo-900 rounded-t-xl flex items-center justify-center">
           <img
             src={projetos[currentSlide].image}
