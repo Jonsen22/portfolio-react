@@ -12,19 +12,22 @@ const Contact = (props) => {
   const [status, setStatus] = useState("");
 
   async function submit() {
+
     if (!nome) setNomeError(true);
 
     if (!email) setEmailError("Email empty");
 
     if (!mensagem) setMensagemError(true);
 
-    if(nomeError && mensagemError && emailError === "ok") {
+    if(nome && mensagem && validateEmail(email)) {
 
+     
       try{
         var response = await postEmail(nome, email, mensagem);
         setStatus(response);
       } catch(error) {
         setStatus("Error sending email.");
+        console.log(response)
       }
       
       console.log(response)
