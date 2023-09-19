@@ -143,6 +143,7 @@ const Contact = (props) => {
                   onChange={(e) => {
                     setMensagem(e.target.value);
                   }}
+               
                 ></textarea>
                 <div className=" flex mt-1 w-full md:w-4/5 justify-between">
                 <span className="text-rose-600 font-thin text-xs text-start pl-2 mt-1 h-3">
@@ -164,6 +165,7 @@ const Contact = (props) => {
                   onChange={(e) => {
                     setMensagem(e.target.value);
                   }}
+                  
                 ></textarea>
                 <div className="max-w-[800px] flex mt-1 w-full md:w-4/5 justify-end">
                   <button

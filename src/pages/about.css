@@ -93,7 +93,7 @@
     /* Remove display: flex; */
     border-left: 3px solid;
     --angle: 0deg;
-    border-image: linear-gradient(var(--angle), rgb(78, 78, 206), darkorchid) 1;
+    border-image: linear-gradient(var(--angle), rgb(78, 78, 206), rgb(153, 50, 204)) 1;
     animation: 0.2s
                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                       s rotate linear infinite;
 }
