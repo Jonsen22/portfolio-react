@@ -11,6 +11,7 @@ const Contact = (props) => {
   const [mensagemError, setMensagemError] = useState(false);
   const [status, setStatus] = useState("");
 
+
   async function submit() {
 
     if (!nome) setNomeError(true);
@@ -27,10 +28,7 @@ const Contact = (props) => {
         setStatus(response);
       } catch(error) {
         setStatus("Error sending email.");
-        console.log(response)
       }
-      
-      console.log(response)
       
       if (response === "Sended" || status === "Sended") {
         setNome("");
@@ -42,6 +40,7 @@ const Contact = (props) => {
         setStatus("");
       }
     }
+    alert(response);
   }
 
   const validateEmail = (input) => {

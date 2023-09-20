@@ -6,12 +6,15 @@ const API_URL = process.env.REACT_APP_EMAIL_URL;
 export async function postEmail(name, email, message) {
   try {
     
-    console.log(process.env.REACT_APP_EMAIL_URL)
+
     const response = await axios.post(API_URL+"api/Email", { name, email, message });
-    console.log(response);
+
     return response.data;
   } catch (error) {
-    console.error('Server not responding')
-    return('Server not responding')
+    console.log(error)
+    if(error.message === "Network Error")
+      return("Server not responding")
+    
+    return(error.response.data)
   }
 }
