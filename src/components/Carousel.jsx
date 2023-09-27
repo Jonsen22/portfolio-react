@@ -1,12 +1,10 @@
 import { ChevronLeft, ChevronRight } from "@mui/icons-material";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import bicicletaApi from "../images/bicicletaApi.png";
 import thunderSports from "../images/thunderSports.png";
 import phasmoRPG from "../images/phasmophobia.png";
 import SQLand from "../images/SQLand.png";
-
-
 import Petdor from "../images/PetDor.png";
 // import bbzinho2 from "../images/bbzinho2.jpg";
 
@@ -54,11 +52,40 @@ export default function Carousel() {
     );
   };
 
+
+  useEffect(() => {
+    const imagesToPreload = [bicicletaApi, thunderSports, phasmoRPG, SQLand, Petdor];
+    const preloadedImages = [];
+
+    const loadImage = (src) => {
+      return new Promise((resolve, reject) => {
+        const image = new Image();
+        image.src = src;
+
+        image.onload = () => resolve(image);
+        image.onerror = () => reject(new Error(`Failed to preload image: ${src}`));
+      });
+    };
+
+    const preloadAllImages = async () => {
+      try {
+        const loadedImages = await Promise.all(imagesToPreload.map(loadImage));
+        // At this point, all images are successfully loaded
+        preloadedImages.push(...loadedImages);
+      } catch (error) {
+        console.error(error);
+      }
+    };
+
+    preloadAllImages();
+  }, []);
+
   return (
     <div className="flex flex-col items-center mt-10 relative h-4/5 m-4">
       <div className="bg-indigo-900 w-full h-auto max-w-lg rounded-xl relative">
         <div className="  bg-indigo-900 rounded-t-xl flex items-center justify-center">
           <img
+          loading="eager"
             src={projetos[currentSlide].image}
             alt={`Slide ${currentSlide}`}
             className="w-[33%] h-[87%] object-contain shadow rounded-xl mt-3 2xl:w-[50%] "

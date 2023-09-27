@@ -108,13 +108,20 @@
 .welcome-photo {
     margin: 0 3% 0 3%;
     margin-left: 3%;
-    flex: 40%;
+    width: 400px;
+    height: 400px;
+    max-width: 400px;
+    max-height: 400px;
     justify-content: center;
     align-items: center;
+    object-position: center;
+    object-fit: cover;
 }
 
 .welcome-photo img{
     border-radius: 100%;
+    width: 400px;
+    height: 400px;
     max-width: 400px;
     max-height: 400px;
 }
