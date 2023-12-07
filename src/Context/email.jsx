@@ -9,12 +9,12 @@ export async function postEmail(name, email, message) {
 
     const response = await axios.post(API_URL+"api/Email", { name, email, message });
 
-    return response.data;
+    return response;
   } catch (error) {
     console.log(error)
     if(error.message === "Network Error")
       return("Server not responding")
     
-    return(error.response.data)
+    return(error.response)
   }
 }

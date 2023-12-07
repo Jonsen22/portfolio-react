@@ -1,6 +1,8 @@
 import { useState } from "react";
 import Linguaruda from "../images/linguaruda.jpg";
 import { postEmail } from "../Context/email";
+import CustomAlert from "../components/CustomAlert";
+import { variants } from "../components/variants";
 
 const Contact = (props) => {
   const [nome, setNome] = useState("");
@@ -10,9 +12,13 @@ const Contact = (props) => {
   const [emailError, setEmailError] = useState("ok");
   const [mensagemError, setMensagemError] = useState(false);
   const [status, setStatus] = useState("");
-
+  const [alertVisible, setAlertVisible] = useState(false);
+  const [variant, setVariant] = useState(variants[0]);
+  const [mensagemAlert, setMensagemAlert] = useState("");
+ 
 
   async function submit() {
+    setAlertVisible(false);
 
     if (!nome) setNomeError(true);
 
@@ -25,22 +31,41 @@ const Contact = (props) => {
      
       try{
         var response = await postEmail(nome, email, mensagem);
-        setStatus(response);
+        console.log(response)
+        setStatus(response.data);
+        setMensagemAlert(response.data)
       } catch(error) {
         setStatus("Error sending email.");
+        setAlertVisible(true);
+        setVariant(variants[0])
       }
       
-      if (response === "Sended" || status === "Sended") {
+      if (response.data === "Sended" || status === "Sended") {
         setNome("");
         setEmail("");
         setMensagem("");
         setEmailError("ok");
         setNomeError(false);
         setMensagemError(false);
-        setStatus("");
+        
+         
       }
+
+      if(response.status === 200)
+          setVariant(variants[2])
+        else
+          setVariant(variants[1])
+        
+        setAlertVisible(true);
+        setStatus("");
     }
-    alert(response);
+
+    if(alertVisible) {
+      setTimeout(() => {
+        setAlertVisible(false);
+      }, 5000);
+    }
+    // CustomAlert(response);
   }
 
   const validateEmail = (input) => {
@@ -68,7 +93,7 @@ const Contact = (props) => {
   return (
     <div className="contact flex flex-col items-center" id="contact">
       <h1>Contact</h1>
-      <div className="flex flex-wrap justify-start ml-[10%] md:ml-[20%] w-[80%] md:justify-center mr-[10%] mt-16 h-[65%]  md:flex-row flex-col items-center">
+      <div className="flex flex-wrap justify-start ml-[10%] md:ml-[20%] w-[80%] md:justify-center mr-[10%] mt-16 h-[100%]  md:flex-row flex-col items-center">
         <div className="w-full md:flex-grow-0  md:w-1/3 md:max-w-[450px] md:h-1/2  flex flex-col justify-start md:justify-end">
           <div className="flex-col flex md:items-start relative md:pl-4">
             <span className="w-full text-left mb-1 ">Your name:</span>
@@ -173,11 +198,21 @@ const Contact = (props) => {
                   >
                     Send it
                   </button>
+                  {/* <button
+                    className=" rounded bg-gray-600 self-end px-[2px] py-[1px] border-2 border-gray-400"
+                    onClick={(e) => submit()}
+                  >
+                    alert
+                  </button> */}
                 </div>
               </>
             )}
           </div>
+          {alertVisible ? (
+        <CustomAlert variant={variant} response={mensagemAlert}/>
+        ) : (<></>)}
         </div>
+    
       </div>
     </div>
   );

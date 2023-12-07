@@ -40,7 +40,9 @@ export default function Carousel() {
     },
 
   ];
+  const imagesToPreload = [phasmoRPG, Petdor, bicicletaApi, thunderSports, SQLand ];
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [preloadedImages, setPreloadedImages] = useState([]);
 
   const handleNextSlide = () => {
     setCurrentSlide((prevSlide) => (prevSlide + 1) % projetos.length);
@@ -52,12 +54,9 @@ export default function Carousel() {
     );
   };
 
-
+/* eslint-disable react-hooks/exhaustive-deps */
   useEffect(() => {
-    const imagesToPreload = [bicicletaApi, thunderSports, phasmoRPG, SQLand, Petdor];
-    const preloadedImages = [];
-
-    const loadImage = (src) => {
+    const loadImage = async (src) => {
       return new Promise((resolve, reject) => {
         const image = new Image();
         image.src = src;
@@ -71,7 +70,7 @@ export default function Carousel() {
       try {
         const loadedImages = await Promise.all(imagesToPreload.map(loadImage));
         // At this point, all images are successfully loaded
-        preloadedImages.push(...loadedImages);
+        setPreloadedImages(loadedImages);
       } catch (error) {
         console.error(error);
       }
@@ -86,7 +85,7 @@ export default function Carousel() {
         <div className="  bg-indigo-900 rounded-t-xl flex items-center justify-center">
           <img
           loading="eager"
-            src={projetos[currentSlide].image}
+            src={preloadedImages[currentSlide]?.src || ""}
             alt={`Slide ${currentSlide}`}
             className="w-[33%] h-[87%] object-contain shadow rounded-xl mt-3 2xl:w-[50%] "
           />

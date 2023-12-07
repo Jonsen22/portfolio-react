@@ -16,6 +16,8 @@ code {
     monospace;
 }
 
+
+
 html {
   scroll-behavior: smooth;
 }
@@ -271,6 +273,7 @@ a {
   scroll-snap-align: start;
   width: 100%;
   height: calc(100vh - 40px);
+  min-height: 666px;
 
   text-align: center;
   background: var(--black);
@@ -353,4 +356,13 @@ html {
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover { 
     background-color: rgba(19, 11, 88, 0.6);
+}
+
+.symbol {
+  font-size: 1.75rem;
+}
+
+.symbol-close{
+  height: 24px;
+  cursor: pointer;
 }
