@@ -94,7 +94,7 @@ export default function Carousel() {
               loading="eager"
               src={preloadedImages[currentSlide]?.src || ""}
               alt={`Slide ${currentSlide}`}
-              className="w-full h-full object-contain shadow rounded-xl mt-3 2xl:w-[50%] "
+              className="w-full h-full object-contain shadow rounded-xl mt-3  "
             />
           </a>
         </div>
