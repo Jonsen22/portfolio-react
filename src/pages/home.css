@@ -102,12 +102,13 @@
     max-width: 650px;
     margin-left: 2%;
     min-height: 15%;
+    margin-right: 3%;
    
 }
 
 .welcome-photo {
     margin: 0 3% 0 3%;
-    margin-left: 3%;
+    
     width: 400px;
     height: 400px;
     max-width: 400px;

@@ -17,26 +17,31 @@ export default function Carousel() {
       image: phasmoRPG,
       title: "PhasmoRPG",
       text: "Desktop application using React and Electron to enhance the difficulty of the game Phasmophobia. Created a tool that introduces additional challenges and features to make the gameplay more challenging and engaging for players.",
+      link: "https://github.com/Jonsen22/PhasmoRPG",
     },
     {
       image: Petdor,
       title: "Pet D'or",
       text: "Website created for a college subject, utilizing C# in the backend as a REST service, and employing React and Next.js for the frontend.",
+      link: "https://github.com/Jonsen22/PetDor",
     },
     {
       image: bicicletaApi,
       title: "BicicletaApi",
       text: "Bike rental system based on microservices architecture, utilizing Java and adhering to industry best practices in microservice development.",
+      link: "https://github.com/Jonsen22/BicicletaAPI",
     },
     {
       image: thunderSports,
       title: "Thunder Sports",
       text: "Interactive web page with React that seamlessly integrates APIs for basketball and Formula One, showcasing live and up-to-the-minute results for both sports. Incorporated real-time data refresh to guarantee users have constant access to the most current information.",
+      link: "https://github.com/marcosvmgil/thunder-sports",
     },
     {
       image: SQLand,
       title: "SQLand",
       text: "SQL educational game made using construct 2.",
+      link: "https://sqland.netlify.app/",
     },
 
   ];
@@ -82,38 +87,44 @@ export default function Carousel() {
   return (
     <div className="flex flex-col items-center mt-10 relative h-4/5 m-4">
       <div className="bg-indigo-900 w-full h-auto max-w-lg rounded-xl relative">
-        <div className="  bg-indigo-900 rounded-t-xl flex items-center justify-center">
-          <img
-          loading="eager"
-            src={preloadedImages[currentSlide]?.src || ""}
-            alt={`Slide ${currentSlide}`}
-            className="w-[33%] h-[87%] object-contain shadow rounded-xl mt-3 2xl:w-[50%] "
-          />
+        <div className="  bg-indigo-900 z-40 rounded-t-xl flex items-center justify-center">
+          <a href={projetos[currentSlide].link} target="_blank" rel="noopener noreferrer"
+           className="w-[33%] h-[87%] rounded-xl mt-3 2xl:w-[50%]">
+            <img
+              loading="eager"
+              src={preloadedImages[currentSlide]?.src || ""}
+              alt={`Slide ${currentSlide}`}
+              className="w-full h-full object-contain shadow rounded-xl mt-3 2xl:w-[50%] "
+            />
+          </a>
         </div>
-        <div className="p-4 bg-indigo-900 rounded-b-xl w-full flex-grow-1 max-w-lg pb-6">
-          <p className="text-purple-600 text-xl md:text-3xl 2xl:text-4xl">
-            {projetos[currentSlide].title}
-          </p>
-          <span className="text-sm md:text-base 2xl:text-xl">
-            {projetos[currentSlide].text}
-          </span>
-        </div>
-        <div className="flex justify-between absolute top-20 xl:top-40 w-full max-w-lg p-4  ">
+        <div className="flex z-2 justify-between static w-full max-w-lg p-2  ">
           {" "}
           {/* Updated line */}
           <button
             onClick={handlePrevSlide}
-            className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+            className="p-1 ml-5 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
           >
             <ChevronLeft />
           </button>
           <button
             onClick={handleNextSlide}
-            className="p-1 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
+            className="p-1 mr-5 rounded-full shadow bg-white/80 text-gray-800 hover:bg-white"
           >
             <ChevronRight />
           </button>
         </div>
+        <div className="p-2 bg-indigo-900 rounded-b-xl w-full flex-grow-1 max-w-lg pb-6">
+          
+          <a href={projetos[currentSlide].link} target="_blank" rel="noopener noreferrer" className="text-purple-600 text-xl md:text-3xl 2xl:text-4xl">
+            {projetos[currentSlide].title} 
+          </a>
+          <br/>
+          <span className="text-sm md:text-base 2xl:text-xl">
+            {projetos[currentSlide].text}
+          </span>
+        </div>
+        
         <div className="absolute -top-6 right-0 left-0 pb-3">
           <div className="flex items-center justify-center gap-2 ">
             {projetos.map((_, i) => (
