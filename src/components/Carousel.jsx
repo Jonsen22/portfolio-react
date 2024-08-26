@@ -122,7 +122,7 @@ export default function Carousel() {
         </div>
         <div className="p-2 bg-indigo-900 rounded-b-xl w-full flex-grow-1 max-w-lg pb-6">
           
-          <a href={projetos[currentSlide].link} target="_blank" rel="noopener noreferrer" className="text-purple-600 pb-2 text-xl md:text-3xl 2xl:text-4xl">
+          <a href={projetos[currentSlide].link} target="_blank" rel="noopener noreferrer" className="text-purple-600 pb-2 text-xl md:text-3xl 2xl:text-4xl underline">
             {projetos[currentSlide].title} 
           </a>
           <br/>
