@@ -12,17 +12,16 @@ const About = (props) => {
     "JavaScript",
     "React",
     "Redux",
-    "TypeScript",
-    "jQuery",
     "Electron",
-    "SQL",
-    "NoSQL",
+    "SQLServer",
+    "MongoDB",
+    "Xunit",
     "Git",
     "CI/CD",
+    "Xunit",
     "JUnit",
     "Selenium",
-    "Unit Testing",
-    "Construct 2",
+    "Docker",
     "REST",
   ];
 
@@ -56,7 +55,7 @@ const About = (props) => {
             <h3 className="text-lg font-semibold">Skills</h3>
             <ul>
               {skills.map((skill) => (
-                <li key={skill} className="text-sm">
+                <li key={skill} className="text-sm ">
                   {skill}
                 </li>
               ))}
@@ -100,7 +99,7 @@ const About = (props) => {
           </div>
         </div>
       ) : (
-        <div className="bottomAbout">
+        <div className="bottomAbout mt-[15%]">
           <div className="skills">
             <h3>Skills</h3>
 

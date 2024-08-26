@@ -2,13 +2,13 @@ import React, { useState, useEffect, useCallback } from "react";
 // import "../index.css";
 import "./home.css";
 import Eu from "../images/Eu.jpg";
-import EuSmall from "../images/eu-small.jpg";
+// import EuSmall from "../images/eu-small.jpg";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import PictureAsPdfIcon from "@mui/icons-material/PictureAsPdf";
 
 const Home = (props) => {
-  const [imageLoaded, setImageLoaded] = useState(false);
+  // const [imageLoaded, setImageLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const size = props.size;
 
@@ -35,13 +35,13 @@ const Home = (props) => {
     marginLeft: "10%",
   };
 
-  useEffect(() => {
-    const img = new Image();
-    img.src = Eu;
-    img.onload = () => {
-      setImageLoaded(true);
-    };
-  }, []);
+  // useEffect(() => {
+  //   const img = new Image();
+  //   img.src = Eu;
+  //   img.onload = () => {
+  //     setImageLoaded(true);
+  //   };
+  // }, []);
 
   return (
     <div className="home">
@@ -57,24 +57,24 @@ const Home = (props) => {
 
             <div className="welcome-photo hidden md:flex">
               <div
-                style={{
-                   backgroundImage: `url(${EuSmall})`,
-                  backgroundSize: "cover",
-                  backgroundPosition: "center",
-                  borderRadius: "100%",
-                  width: "400px",
-                  height: "400px",
-                }}
+              //   style={{
+              //      backgroundImage: `url(${EuSmall})`,
+              //     backgroundSize: "cover",
+              //     backgroundPosition: "center",
+              //     borderRadius: "100%",
+              //     width: "400px",
+              //     height: "400px",
+              //   }}
               >
-                {imageLoaded && (
+                {/* // {imageLoaded && ( */}
                   <img
                     loading="lazy"
                     className="photo1"
                     src={Eu}
                     alt="placeholder"
-                    onLoad={() => setImageLoaded(true)}
+                    // onLoad={() => setImageLoaded(true)}
                   />
-                )}
+                {/* // )} */}
               </div>
             </div>
           </div>

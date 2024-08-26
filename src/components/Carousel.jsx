@@ -6,13 +6,19 @@ import thunderSports from "../images/thunderSports.png";
 import phasmoRPG from "../images/phasmophobia.png";
 import SQLand from "../images/SQLand.png";
 import Petdor from "../images/PetDor.png";
-// import bbzinho2 from "../images/bbzinho2.jpg";
 
+var budgetOrganizer = "https://static.vecteezy.com/system/resources/previews/002/389/655/original/personal-budget-planning-rgb-color-icon-vector.jpg";
 
 export default function Carousel() {
   // https://picsum.photos/200/300
 
   const projetos = [
+    {
+      image: budgetOrganizer,
+      title: "BudgetOrganizer",
+      text: "A simple budget organizer built with C#, including authentication using JWT, React, SQL Server, and Docker. The main focus of this project was to deepen my knowledge of Docker and practice unit testing with xUnit.",
+      link: "https://github.com/Jonsen22/FinancialOrganizer",
+    },
     {
       image: phasmoRPG,
       title: "PhasmoRPG",
@@ -45,7 +51,7 @@ export default function Carousel() {
     },
 
   ];
-  const imagesToPreload = [phasmoRPG, Petdor, bicicletaApi, thunderSports, SQLand ];
+  const imagesToPreload = [budgetOrganizer, phasmoRPG, Petdor, bicicletaApi, thunderSports, SQLand ];
   const [currentSlide, setCurrentSlide] = useState(0);
   const [preloadedImages, setPreloadedImages] = useState([]);
 
@@ -116,7 +122,7 @@ export default function Carousel() {
         </div>
         <div className="p-2 bg-indigo-900 rounded-b-xl w-full flex-grow-1 max-w-lg pb-6">
           
-          <a href={projetos[currentSlide].link} target="_blank" rel="noopener noreferrer" className="text-purple-600 text-xl md:text-3xl 2xl:text-4xl">
+          <a href={projetos[currentSlide].link} target="_blank" rel="noopener noreferrer" className="text-purple-600 pb-2 text-xl md:text-3xl 2xl:text-4xl">
             {projetos[currentSlide].title} 
           </a>
           <br/>
